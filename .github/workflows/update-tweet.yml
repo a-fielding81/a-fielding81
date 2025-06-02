@@ -1,0 +1,131 @@
+# This is the name that will show up in GitHub Actions
+name: Update README with Latest Tweet
+
+# When should this run?
+on:
+  # Let's start with manual trigger so we can test it
+  workflow_dispatch:
+  # Later we can add: schedule to run automatically
+
+# What should it do?
+jobs:
+  update-readme:
+    # Use Ubuntu (Linux) computer in the cloud
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Download our repository files
+      - name: Get repository files
+        uses: actions/checkout@v3
+
+      # Step 2: Install Node.js (JavaScript runtime)
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Step 3: Run our custom script
+      - name: Update README with latest tweet
+        run: |
+          # Install the RSS parser library
+          npm install rss-parser
+          
+          # Run our JavaScript code
+          node << 'EOF'
+          console.log('🚀 Starting tweet update...');
+          
+          // Import the RSS parser
+          const Parser = require('rss-parser');
+          const fs = require('fs');
+          
+          const parser = new Parser();
+          
+          async function updateReadme() {
+            try {
+              console.log('📡 Fetching RSS feed...');
+              
+              // Your RSS feed URL
+              const feed = await parser.parseURL('https://rss.app/feeds/gUZpnmZwl92b6C8H.xml');
+              
+              console.log('📊 Feed data:', {
+                title: feed.title,
+                itemCount: feed.items ? feed.items.length : 0
+              });
+              
+              if (feed.items && feed.items.length > 0) {
+                const latestTweet = feed.items[0];
+                
+                console.log('🐦 Latest tweet:', {
+                  title: latestTweet.title,
+                  date: latestTweet.pubDate,
+                  link: latestTweet.link
+                });
+                
+                // Format the date nicely
+                const tweetDate = new Date(latestTweet.pubDate).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'short',
+                  day: 'numeric'
+                });
+                
+                // Read current README file
+                console.log('📖 Reading README.md...');
+                let readme = fs.readFileSync('README.md', 'utf8');
+                
+                // Create the new tweet section
+                const tweetSection = `### 🐦 Latest Tweet
+
+> ${latestTweet.title}
+
+*${tweetDate}* • [View on Twitter](${latestTweet.link})`;
+                
+                // Find and replace the section between our markers
+                const startMarker = '<!-- TWITTER:START -->';
+                const endMarker = '<!-- TWITTER:END -->';
+                
+                if (readme.includes(startMarker) && readme.includes(endMarker)) {
+                  console.log('✅ Found Twitter markers in README');
+                  
+                  const before = readme.substring(0, readme.indexOf(startMarker) + startMarker.length);
+                  const after = readme.substring(readme.indexOf(endMarker));
+                  
+                  readme = before + '\n' + tweetSection + '\n' + after;
+                  
+                  // Write the updated README back to file
+                  fs.writeFileSync('README.md', readme);
+                  console.log('✅ README updated successfully!');
+                } else {
+                  console.log('❌ Could not find Twitter markers in README.md');
+                  console.log('Make sure you have <!-- TWITTER:START --> and <!-- TWITTER:END --> in your README');
+                }
+                
+              } else {
+                console.log('❌ No tweets found in RSS feed');
+              }
+            } catch (error) {
+              console.error('❌ Error:', error.message);
+            }
+          }
+          
+          updateReadme();
+          EOF
+
+      # Step 4: Save the changes back to GitHub
+      - name: Commit and push changes
+        run: |
+          # Set up git user (required for commits)
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action Bot"
+          
+          # Add the changed README file
+          git add README.md
+          
+          # Check if there are actually changes to commit
+          if git diff --staged --quiet; then
+            echo "📝 No changes to commit"
+          else
+            echo "💾 Committing changes..."
+            git commit -m "🐦 Update latest tweet in README"
+            git push
+            echo "✅ Changes pushed to GitHub!"
+          fi
