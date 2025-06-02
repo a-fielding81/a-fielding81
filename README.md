@@ -8,6 +8,7 @@ I'm interested in domestic and international politics, applied economics, and pu
 ### 📱 Latest Tweets
 
 <!-- TWITTER:START -->
+- [Hello world! This is a test tweet to see if my GitHub README integration is working.](https://x.com/andrewcfielding/status/1929227891943825586)
 <!-- TWITTER:END -->
 
 <!--
