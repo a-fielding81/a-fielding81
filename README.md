@@ -1,4 +1,17 @@
-## Hi there 👋
+# What's up, I'm Andrew 🤙🏼
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/a-fielding) [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/andrewcfielding) [![Substack](https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://andrewcfielding.substack.com)
+
+Nice to meet you, and welcome to my GitHub profile! 👋🏼
+I graduated from Northeastern University in May 2025 with a degree in economics and political science, and a minor in data science. 🎓
+I'm interested in domestic and international politics, applied economics, and public policy. I believe that the key to building a smarter, fairer, kinder, and better society is in leveraging technology - and data in particular - to find solutions to complicated problems. 💡
+
+<!-- TWITTER:START -->
+## 🐦 My latest Tweet
+
+> Loading latest tweet...
+
+*Loading...* • [Follow me on Twitter](https://twitter.com/andrewcfielding)
+<!-- TWITTER:END -->
 
 <!--
 **a-fielding81/a-fielding81** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
