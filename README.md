@@ -6,11 +6,11 @@ I graduated from Northeastern University in May 2025 with a degree in economics 
 I'm interested in domestic and international politics, applied economics, and public policy. I believe that the key to building a smarter, fairer, kinder, and better society is in leveraging technology - and data in particular - to find solutions to complicated problems. 💡
 
 <!-- TWITTER:START -->
-## 🐦 My latest Tweet
+### 🐦 Latest Tweet
 
-> Loading latest tweet...
+> Hello world! This is a test tweet to see if my GitHub README integration is working.
 
-*Loading...* • [Follow me on Twitter](https://twitter.com/andrewcfielding)
+*Jun 1, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929227891943825586)
 <!-- TWITTER:END -->
 
 <!--
