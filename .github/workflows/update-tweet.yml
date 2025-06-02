@@ -73,7 +73,7 @@ jobs:
                 let readme = fs.readFileSync('README.md', 'utf8');
                 
                 // Create the new tweet section
-                const tweetSection = `### 🐦 Latest Tweet
+                const tweetSection = `## 🐦 My latest Tweet
 
 > ${latestTweet.title}
 
