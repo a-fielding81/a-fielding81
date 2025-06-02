@@ -5,12 +5,9 @@ Nice to meet you, and welcome to my GitHub profile! 👋🏼
 I graduated from Northeastern University in May 2025 with a degree in economics and political science, and a minor in data science. 🎓
 I'm interested in domestic and international politics, applied economics, and public policy. I believe that the key to building a smarter, fairer, kinder, and better society is in leveraging technology - and data in particular - to find solutions to complicated problems. 💡
 
+### 📱 Latest Tweets
+
 <!-- TWITTER:START -->
-### 🐦 Latest Tweet
-
-> Hello world! This is a test tweet to see if my GitHub README integration is working.
-
-*Jun 1, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929227891943825586)
 <!-- TWITTER:END -->
 
 <!--
