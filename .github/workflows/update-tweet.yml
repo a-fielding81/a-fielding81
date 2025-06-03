@@ -76,7 +76,7 @@ jobs:
                 // Create the new tweet section
                 const tweetText = (latestTweet.description || latestTweet.title).replace(/<[^>]*>/g, '').trim();
                 // Extract just the tweet part (before the attribution)
-                const cleanTweet = tweetText.split('—')[0].trim();
+                const cleanTweet = tweetText.split(' — Andrew Fielding')[0].trim();
                 const tweetSection = '## Latest Tweet 🐦\n\n> ' + cleanTweet + '\n\n*' + tweetDate + '* • [View on Twitter](' + latestTweet.link + ')';
                 
                 // Find and replace the section between our markers
