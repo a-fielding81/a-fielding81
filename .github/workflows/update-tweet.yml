@@ -3,9 +3,10 @@ name: Update README with Latest Tweet
 
 # When should this run?
 on:
-  # Let's start with manual trigger so we can test it
+  schedule:
+    # Runs once a day because using Free tier in Rss.app
+    - cron: '0 0 * * *'
   workflow_dispatch:
-  # Later we can add: schedule to run automatically
 
 # What should it do?
 jobs:
