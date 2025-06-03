@@ -1,11 +1,10 @@
-<div id="header" align="center">
-  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnN1dnkxd3MybDdrYnBjengxeHRpd25oMWh1MHN1MmIzbGp1Z215NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiIzJSKB4l7xTouE8/giphy.gif" width="100"/>
-</div>
 <img src ="https://komarev.com/ghpvc/?username=a-fielding81" alt=""/>
-
+<div id="header" align="center">
+  <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExNnN1dnkxd3MybDdrYnBjengxeHRpd25oMWh1MHN1MmIzbGp1Z215NSZlcD12MV9naWZzX3NlYXJjaCZjdD1n/xTiIzJSKB4l7xTouE8/giphy.gif" width="500"/>
+</div>
 
 # What's up, I'm Andrew 🤙🏼
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/a-fielding) [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/andrewcfielding) [![Substack](https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://andrewcfielding.substack.com) [![Letterboxd](https://img.shields.io/badge/Letterboxd-Profile-orange?logo=letterboxd&logoColor=white)](https://letterboxd.com/afielding81/) [![Strava](https://img.shields.io/badge/Strava-FC4C02?style=for-the-badge&logo=strava&logoColor=white)](https://www.strava.com/athletes/117241598) [![Goodreads](https://img.shields.io/badge/Goodreads-F3F1EA?style=for-the-badge&logo=goodreads&logoColor=372213)](https://www.goodreads.com/user/show/190896838-andrew-fielding)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/a-fielding) [![Twitter](https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white)](https://twitter.com/andrewcfielding) [![Substack](https://img.shields.io/badge/Substack-FF6719?style=for-the-badge&logo=substack&logoColor=white)](https://andrewcfielding.substack.com) [![Letterboxd](https://img.shields.io/badge/Letterboxd-orange?logo=letterboxd&logoColor=white)](https://letterboxd.com/afielding81/) [![Strava](https://img.shields.io/badge/Strava-FC4C02?style=for-the-badge&logo=strava&logoColor=white)](https://www.strava.com/athletes/117241598) [![Goodreads](https://img.shields.io/badge/Goodreads-F3F1EA?style=for-the-badge&logo=goodreads&logoColor=372213)](https://www.goodreads.com/user/show/190896838-andrew-fielding)
 
 
 Nice to meet you, and welcome to my GitHub profile! 👋🏼
@@ -13,12 +12,6 @@ Nice to meet you, and welcome to my GitHub profile! 👋🏼
 I graduated from Northeastern University in May 2025 with a degree in economics and political science, and a minor in data science. I'm also curious about software development. 🎓
 
 I'm interested in domestic and international politics, applied economics, and public policy. I believe that the key to building a smarter, fairer, kinder, and better society is in leveraging technology - and data in particular - to find solutions to complicated problems. 💡
-
-In my spare time, I try to be as active as I can. This ranges from running to cycling to playing and watching sports. I played golf and frisbee competitively in high school and college. In the winter, I'm an avid skier who loves trees and bumps, while in the summer I'm an amateur surfer trying to find his way. I'm a dedicated fantasy football player, and I also love to watch the MLB and PGA TOUR. 🏋🏼‍♂️
-
-I also love movies. My Letterboxd top four are Good Will Hunting, Interstellar, Avengers: Infinity War, and The Dark Knight. 🎬
-
----
 
 ## About Me 💁🏼‍♂️
 - 😀 My pronouns are he/him/his.
@@ -29,8 +22,6 @@ I also love movies. My Letterboxd top four are Good Will Hunting, Interstellar, 
 - 🤔 I'm looking for help with finding the best free resources to expand my programming and development toolkit to include more languages, and to better train my brain to think like a developer. 
 - 📫 Email me here: [![Gmail](https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white)](mailto:afielding2025@gmail.com)
 - ⚡️ Fun fact: I play the violin! 
-
----
 
 ## Languages 🤟🏼
 <div>
@@ -47,7 +38,7 @@ I also love movies. My Letterboxd top four are Good Will Hunting, Interstellar, 
   <img src="https://github.com/devicons/devicon/blob/master/icons/scikitlearn/scikitlearn-original.svg" title="Scikit-Learn"  alt="R" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/matplotlib/matplotlib-original-wordmark.svg" title="Matplotlib"  alt="Matplotlib" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/plotly/plotly-original-wordmark.svg" title="Plotly"  alt="Plotly" width="40" height="40"/>&nbsp;
-  <img src="https://github.com/devicons/devicon/blob/master/icons/plotly/plotly-original-wordmark.svg" title="Flask"  alt="Flask" width="40" height="40"/>&nbsp;
+  <img src="https://github.com/devicons/devicon/blob/master/icons/flask/flask-original-wordmark.svg" title="Flask"  alt="Flask" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/streamlit/streamlit-original-wordmark.svg" title="Streamlit"  alt="Streamlit" width="40" height="40"/>&nbsp;
   <img src="https://github.com/devicons/devicon/blob/master/icons/jupyter/jupyter-original-wordmark.svg" title="Jupyter"  alt="Jupyter" width="40" height="40"/>&nbsp;
 </div>
@@ -67,13 +58,9 @@ I also love movies. My Letterboxd top four are Good Will Hunting, Interstellar, 
   <img src="https://github.com/devicons/devicon/blob/master/icons/figma/figma-original.svg" title="Figma"  alt="Figma" width="40" height="40"/>&nbsp;
 </div>
 
----
-
 ## My Stats 🔥
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=a-fielding81&theme=dark&background=000000)](https://git.io/streak-stats)
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=a-fielding81)](https://github.com/anuraghazra/github-readme-stats)
-
-
 
 ## My Latest Tweets 📱
 
