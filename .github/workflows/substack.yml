@@ -1,18 +1,60 @@
 name: Latest blog post workflow
 on:
   schedule:
-    # Runs every hour
     - cron: '0 0 * * *'
   workflow_dispatch:
-
 jobs:
   update-readme-with-blog:
     name: Update this repos README with latest blog posts
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: codeSTACKr/rss-parser-action@v1
+      - name: Setup Python
+        uses: actions/setup-python@v4
         with:
-          feed-url: "https://andrewcfielding.substack.com/feed/"
-          max-posts: 5
-          template: "- [TITLE](LINK) - PUBLISHED_DATE"
+          python-version: '3.x'
+      - name: Install dependencies
+        run: |
+          pip install feedparser requests
+      - name: Update README with blog posts
+        run: |
+          python - <<EOF
+          import feedparser
+          import requests
+          import re
+          
+          # Fetch RSS with proper User-Agent
+          headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36'}
+          response = requests.get('https://andrewcfielding.substack.com/feed/', headers=headers)
+          
+          # Parse RSS
+          feed = feedparser.parse(response.content)
+          
+          # Read current README
+          with open('README.md', 'r') as f:
+              content = f.read()
+          
+          # Generate blog post list
+          posts = []
+          for entry in feed.entries[:5]:  # Latest 5 posts
+              posts.append(f"- [{entry.title}]({entry.link})")
+          
+          blog_section = "<!-- BLOG-POST-LIST:START -->\n" + "\n".join(posts) + "\n<!-- BLOG-POST-LIST:END -->"
+          
+          # Replace or add blog section
+          if "<!-- BLOG-POST-LIST:START -->" in content:
+              content = re.sub(r'<!-- BLOG-POST-LIST:START -->.*?<!-- BLOG-POST-LIST:END -->', blog_section, content, flags=re.DOTALL)
+          else:
+              content += "\n\n" + blog_section
+          
+          # Write updated README
+          with open('README.md', 'w') as f:
+              f.write(content)
+          EOF
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Updated blog posts"
+          git push
