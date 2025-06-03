@@ -65,9 +65,9 @@ I'm interested in domestic and international politics, applied economics, and pu
 ## My Latest Tweets 📱
 
 <!-- TWITTER:START -->
-### 🐦 Latest Tweet
+## Latest Tweet 🐦
 
-> My first attempt worked - now let's try 
+> My first attempt worked - now let's try
 
 *Jun 2, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929661401683185920)
 <!-- TWITTER:END -->
