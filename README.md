@@ -62,32 +62,10 @@ I'm interested in domestic and international politics, applied economics, and pu
 [![GitHub Streak](http://github-readme-streak-stats.herokuapp.com?user=a-fielding81&theme=dark&background=000000)](https://git.io/streak-stats)
 [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=a-fielding81)](https://github.com/anuraghazra/github-readme-stats)
 
-## My Latest Tweets 📱
-
 <!-- TWITTER:START -->
-## Latest Tweet 🐦
+## My Latest Tweet 🐦
 
 > Let's try this one last time!
 
 *Jun 3, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929738337134563401)
 <!-- TWITTER:END -->
-
-## My Latest Blog Posts ✏️
-<!-- BLOG-POST-LIST:START -->
-- No recent posts found
-<!-- BLOG-POST-LIST:END -->
-
-<!--
-**a-fielding81/a-fielding81** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->

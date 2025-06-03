@@ -79,7 +79,7 @@ jobs:
                 });
                 console.log('📅 Formatted date:', tweetDate);
                 
-                const tweetSection = '## Latest Tweet 🐦\n\n> ' + cleanTweet + '\n\n*' + tweetDate + '* • [View on Twitter](' + latestTweet.link + ')';
+                const tweetSection = '## My Latest Tweet 🐦\n\n> ' + cleanTweet + '\n\n*' + tweetDate + '* • [View on Twitter](' + latestTweet.link + ')';
                 console.log('📝 Final tweet section:', JSON.stringify(tweetSection));
                 
                 // Read current README file
