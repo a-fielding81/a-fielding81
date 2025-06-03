@@ -33,14 +33,15 @@ jobs:
           
           # Run our JavaScript code
           node << 'EOF'
-          console.log('🚀 Starting tweet update...');
           
+          console.log('🚀 Starting tweet update...');
+
           // Import the RSS parser
           const Parser = require('rss-parser');
           const fs = require('fs');
-          
+
           const parser = new Parser();
-          
+
           async function updateReadme() {
             try {
               console.log('📡 Fetching RSS feed...');
@@ -56,11 +57,19 @@ jobs:
               if (feed.items && feed.items.length > 0) {
                 const latestTweet = feed.items[0];
                 
-                console.log('🐦 Latest tweet:', {
-                  title: latestTweet.title,
-                  date: latestTweet.pubDate,
-                  link: latestTweet.link
-                });
+                console.log('🐦 Raw tweet data:');
+                console.log('  title:', JSON.stringify(latestTweet.title));
+                console.log('  description:', JSON.stringify(latestTweet.description));
+                console.log('  pubDate:', latestTweet.pubDate);
+                console.log('  link:', latestTweet.link);
+                
+                // Create the new tweet section
+                const tweetText = (latestTweet.description || latestTweet.title).replace(/<[^>]*>/g, '').trim();
+                console.log('🧹 After HTML removal:', JSON.stringify(tweetText));
+                
+                // Extract just the tweet part (before the attribution)
+                const cleanTweet = tweetText.split('—')[0].trim();
+                console.log('✂️ After splitting on —:', JSON.stringify(cleanTweet));
                 
                 // Format the date nicely
                 const tweetDate = new Date(latestTweet.pubDate).toLocaleDateString('en-US', {
@@ -68,16 +77,14 @@ jobs:
                   month: 'short',
                   day: 'numeric'
                 });
+                console.log('📅 Formatted date:', tweetDate);
+                
+                const tweetSection = '## Latest Tweet 🐦\n\n> ' + cleanTweet + '\n\n*' + tweetDate + '* • [View on Twitter](' + latestTweet.link + ')';
+                console.log('📝 Final tweet section:', JSON.stringify(tweetSection));
                 
                 // Read current README file
                 console.log('📖 Reading README.md...');
                 let readme = fs.readFileSync('README.md', 'utf8');
-                
-                // Create the new tweet section
-                const tweetText = (latestTweet.description || latestTweet.title).replace(/<[^>]*>/g, '').trim();
-                // Extract just the tweet part (before the attribution)
-                const cleanTweet = tweetText.split(' — Andrew Fielding')[0].trim();
-                const tweetSection = '## Latest Tweet 🐦\n\n> ' + cleanTweet + '\n\n*' + tweetDate + '* • [View on Twitter](' + latestTweet.link + ')';
                 
                 // Find and replace the section between our markers
                 const startMarker = '<!-- TWITTER:START -->';
@@ -94,9 +101,24 @@ jobs:
                   // Write the updated README back to file
                   fs.writeFileSync('README.md', readme);
                   console.log('✅ README updated successfully!');
+                  
+                  // Show a preview of what was written
+                  const previewStart = readme.indexOf(startMarker);
+                  const previewEnd = readme.indexOf(endMarker) + endMarker.length;
+                  console.log('📋 Updated section preview:');
+                  console.log(readme.substring(previewStart, previewEnd));
+                  
                 } else {
                   console.log('❌ Could not find Twitter markers in README.md');
                   console.log('Make sure you have <!-- TWITTER:START --> and <!-- TWITTER:END --> in your README');
+                  
+                  // Show what markers we're looking for
+                  console.log('Looking for:', startMarker, 'and', endMarker);
+                  
+                  // Show if README contains similar text
+                  if (readme.includes('TWITTER')) {
+                    console.log('README contains "TWITTER" text - check the exact format');
+                  }
                 }
                 
               } else {
@@ -104,12 +126,11 @@ jobs:
               }
             } catch (error) {
               console.error('❌ Error:', error.message);
+              console.error('Full error:', error);
             }
           }
-          
-          updateReadme();
-          EOF
 
+          updateReadme();
       # Step 4: Save the changes back to GitHub
       - name: Commit and push changes
         run: |
