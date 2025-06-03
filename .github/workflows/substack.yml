@@ -10,9 +10,9 @@ jobs:
     name: Update this repos README with latest blog posts
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: gautamkrishnar/blog-post-workflow@master
+      - uses: actions/checkout@v4
+      - uses: codeSTACKr/rss-parser-action@v1
         with:
-          max_post_count: "5"
-          feed_list: "https://andrewcfielding.substack.com/feed/"
-          user_agent: "Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/109.0"
+          feed-url: "https://andrewcfielding.substack.com/feed/"
+          max-posts: 5
+          template: "- [TITLE](LINK) - PUBLISHED_DATE"
