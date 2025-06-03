@@ -18,39 +18,72 @@ jobs:
           pip install feedparser requests
       - name: Update README with blog posts
         run: |
+          echo "Starting Python script..."
           python - <<EOF
           import feedparser
           import requests
           import re
+          from datetime import datetime
+          
+          print("Starting blog post fetch...")
           
           # Fetch RSS with proper User-Agent
           headers = {'User-Agent': 'Mozilla/5.0 (X11; Ubuntu; Linux x86_64) AppleWebKit/537.36'}
+          print("Fetching RSS feed...")
           response = requests.get('https://andrewcfielding.substack.com/feed', headers=headers)
+          
+          print(f"Response status: {response.status_code}")
+          print(f"Response length: {len(response.content)} bytes")
           
           # Parse RSS
           feed = feedparser.parse(response.content)
+          
+          print(f"Feed title: {getattr(feed.feed, 'title', 'No title')}")
+          print(f"Number of entries found: {len(feed.entries)}")
+          
+          # Debug: Print first few entries
+          for i, entry in enumerate(feed.entries[:3]):
+              print(f"Entry {i+1}: {getattr(entry, 'title', 'No title')} - {getattr(entry, 'link', 'No link')}")
           
           # Read current README
           with open('README.md', 'r') as f:
               content = f.read()
           
+          print("Current README content preview:")
+          print(content[:500] + "..." if len(content) > 500 else content)
+          
           # Generate blog post list
           posts = []
           for entry in feed.entries[:5]:  # Latest 5 posts
-              posts.append(f"- [{entry.title}]({entry.link})")
+              title = getattr(entry, 'title', 'Untitled')
+              link = getattr(entry, 'link', '#')
+              posts.append(f"- [{title}]({link})")
+              print(f"Added post: {title}")
+          
+          if not posts:
+              print("No posts found to add!")
+              posts = ["- No recent posts found"]
           
           blog_section = "<!-- BLOG-POST-LIST:START -->\n" + "\n".join(posts) + "\n<!-- BLOG-POST-LIST:END -->"
           
+          print("Generated blog section:")
+          print(blog_section)
+          
           # Replace or add blog section
           if "<!-- BLOG-POST-LIST:START -->" in content:
+              print("Found existing blog section, replacing...")
               content = re.sub(r'<!-- BLOG-POST-LIST:START -->.*?<!-- BLOG-POST-LIST:END -->', blog_section, content, flags=re.DOTALL)
           else:
+              print("No existing blog section found, appending...")
               content += "\n\n" + blog_section
           
           # Write updated README
           with open('README.md', 'w') as f:
               f.write(content)
+          
+          print("Python script completed!")
           EOF
+          echo "Python script finished."
       - name: Commit changes
         run: |
           git config --local user.email "action@github.com"
