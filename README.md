@@ -71,6 +71,7 @@ I'm interested in domestic and international politics, applied economics, and pu
 
 ## My Latest Blog Posts ✏️
 <!-- BLOG-POST-LIST:START -->
+
 <!-- BLOG-POST-LIST:END -->
 
 <!--
