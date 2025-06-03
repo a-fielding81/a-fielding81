@@ -65,7 +65,7 @@ I'm interested in domestic and international politics, applied economics, and pu
 <!-- TWITTER:START -->
 ## My Latest Tweet 🐦
 
-> Let's try this one last time!
+> This is just one final test - I think something might be amiss with my script when hyphens are included in the Tweet. We'll find out soon!
 
-*Jun 3, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929738337134563401)
+*Jun 3, 2025* • [View on Twitter](https://x.com/andrewcfielding/status/1929742631946670318)
 <!-- TWITTER:END -->
